@@ -1,6 +1,6 @@
 # Sova2 server
 
-##How to start?
+## How to start?
 
 You need to clone repository:
 `https://github.com/khodorkovskyalexey/sova2_backend.git`
