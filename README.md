@@ -12,7 +12,7 @@ In this folder you need to run:
 or
 `yarn install`
 
-Then you need to execute the command:
+Then you need to execute the command for starting server:
 `npm run dev`
 or
 `yarn dev`
