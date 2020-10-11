@@ -1,5 +1,7 @@
 # Sova2 server
 
+Default port: 8081
+
 ## How to start?
 
 You need to clone repository:
