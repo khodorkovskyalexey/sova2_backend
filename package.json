@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Server part for the \"System for testing students\" application",
   "main": "src/index.js",
-  "main": "index.js",
   "repository": "https://github.com/khodorkovskyalexey/sova2_backend.git",
   "author": "Alexey Khodorkovsky <aezz120813@gmail.com>",
   "license": "MIT",
