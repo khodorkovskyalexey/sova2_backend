@@ -8,9 +8,6 @@ const testRoute = require('./routes/testRoute')
 
 const port = process.env.PORT || 8081
 server
-    //routes
-    .use(testRoute.routes())
-    //others
     .use(async (ctx, next) => {
         ctx.set("Access-Control-Allow-Origin", "*")
         ctx.set(
@@ -20,6 +17,10 @@ server
         ctx.set("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS")
         await next()
     })
+    //routes
+    .use(testRoute.routes())
+    //others
+
     .use(logger("dev"))
     .use(cors())
     .listen(port, () => {
