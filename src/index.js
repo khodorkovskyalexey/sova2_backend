@@ -4,12 +4,9 @@ const cors = require('koa-cors')
 
 const server = new Koa()
 
-const testRoute = require('./routes/testRoute')
-
 const port = process.env.PORT || 8081
 server
     //routes
-    .use(testRoute.routes())
     //others
     .use(async (ctx, next) => {
         ctx.set("Access-Control-Allow-Origin", "*")
