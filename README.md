@@ -19,18 +19,50 @@ or
 
 ## Endpoints
 
-### `POST /test`
+### Регистрация
 
-Request = response
+#### `POST /register`
 
-### `GET /test`
-
-Response
-~~~
+Request
+```json
 {
-    "to": "Serega",
-    "from": "Leha",
-    "message": "Salam alleikum",
-    "level_of_respect": 1000
+	"fio": "Peshkov Nikita",
+	"email": "peshkov.nikita@mail.com",
+	"password": "chabypeli10"
 }
-~~~
+```
+
+Resonse
+```json
+{
+	"token": "23uige-jwr-flakj-dshja-ksfh"
+}
+```
+
+### Авторизация
+
+#### `POST /auth`
+
+Request
+```json
+{
+	"email": "peshkov.nikita@mail.com",
+	"password": "chabypeli10"
+}
+```
+
+Resonse в случае успешной авторизации
+```json
+{
+	"token": "23uige-jwr-flakj-dshja-ksfh",
+	"status": 200
+}
+```
+
+Resonse в случае неуспешной авторизации
+```json
+{
+	"token": "",
+	"status": 400
+}
+```
