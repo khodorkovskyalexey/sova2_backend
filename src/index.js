@@ -18,13 +18,13 @@ server
         ctx.set("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS")
         await next()
     })
-    .use(cors())
     //bodyparser
     .use(bodyParser)
     //routes
     .use(registerRouter.routes())
     //others
     .use(logger("dev"))
+    .use(cors())
     .listen(port, () => {
         console.log("Server listening on port: " + port)
     })
