@@ -9,7 +9,7 @@ const registerRouter = require('./routes/register')
 const port = process.env.PORT || 8081
 server
     //cors
-    /*.use(async (ctx, next) => {
+    .use(async (ctx, next) => {
         ctx.set("Access-Control-Allow-Origin", "*")
         ctx.set(
             "Access-Control-Allow-Headers",
@@ -17,7 +17,7 @@ server
         )
         ctx.set("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS")
         await next()
-    })*/
+    })
     .use(cors({
         "origin": "*",
         "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
