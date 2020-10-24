@@ -18,6 +18,8 @@
     "koa-cors": "^0.0.16",
     "koa-morgan": "^1.0.1",
     "koa-router": "^9.4.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "pg": "^8.4.1",
+    "sequelize": "^6.3.5"
   }
 }

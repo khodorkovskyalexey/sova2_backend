@@ -1,7 +1,10 @@
 const Koa = require('koa')
 const logger = require('koa-morgan')
 const cors = require('koa-cors')
+const bodyParser = require("koa-body")()
 const server = new Koa()
+
+const registerRouter = require('./routes/register')
 
 const port = process.env.PORT || 8081
 server
@@ -16,7 +19,10 @@ server
         await next()
     })
     .use(cors())
+    //bodyparser
+    .use(bodyParser)
     //routes
+    .use(registerRouter.routes())
     //others
     .use(logger("dev"))
     .listen(port, () => {

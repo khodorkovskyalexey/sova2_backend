@@ -32,10 +32,18 @@ Request
 }
 ```
 
-Resonse
+Resonse (если все ок)
 ```json
 {
-	"token": "23uige-jwr-flakj-dshja-ksfh"
+  "token": "23uige-jwr-flakj-dshja-ksfh",
+  "status": 200
+}
+```
+Response (если такой email уже существует)
+```json
+{
+  "token": "",
+  "status": 400
 }
 ```
 
