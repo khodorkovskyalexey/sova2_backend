@@ -4,9 +4,8 @@ const { User } = require('../database/db')
 
 require('dotenv').config({ path: '../.env' })
 
-const cors = require('koa-cors')
 router
-    .post('/register', cors(), async ctx => {
+    .post('/register', async ctx => {
         const token = uuidv5(ctx.request.body["email"], process.env.TOKEN_NAMESPACE)
         let success = true
         await User
