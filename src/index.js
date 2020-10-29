@@ -5,6 +5,7 @@ const bodyParser = require("koa-body")()
 const server = new Koa()
 
 const registerRouter = require('./routes/register')
+const authRouter = require('./routes/auth')
 
 const port = process.env.PORT || 8081
 server
@@ -29,6 +30,7 @@ server
     .use(bodyParser)
     //routes
     .use(registerRouter.routes())
+    .use(authRouter.routes())
     //others
     .use(logger("dev"))
     .listen(port, () => {

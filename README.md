@@ -62,6 +62,7 @@ Request
 Resonse в случае успешной авторизации
 ```json
 {
+	"fio": "Peshkov Nikita",
 	"token": "23uige-jwr-flakj-dshja-ksfh",
 	"status": 200
 }
@@ -70,6 +71,7 @@ Resonse в случае успешной авторизации
 Resonse в случае неуспешной авторизации
 ```json
 {
+	"fio": "",
 	"token": "",
 	"status": 400
 }
