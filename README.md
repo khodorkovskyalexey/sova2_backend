@@ -76,3 +76,44 @@ Resonse в случае неуспешной авторизации
 	"status": 400
 }
 ```
+
+### Создание теста
+
+#### `POST /test`
+
+Request
+```json
+{
+  "title": "Какой-то заголовок",
+  "subject": "Проектная деятельность",
+  "author": "23uige-jwr-flakj-dshja-ksfh",
+  "questions": [
+    {
+      "text": "Вопрос 1",
+      "answers": [
+        {
+          "text": "Ответ 1 верный",
+          "is_it_true": true
+        },
+        {
+          "text": "Ответ 2 неверный",
+          "is_it_true": false
+        }
+      ]
+    },
+    {
+      "text": "Вопрос 2",
+      "answers": [
+        {
+          "text": "Вопрос 1 неверный",
+          "is_it_true": false
+        },
+        {
+          "text": "Вопрос 2 верный",
+          "is_it_true": true
+        }
+      ]
+    }
+  ]
+}
+```
