@@ -15,6 +15,8 @@ Test.belongsTo(User)
 
 sequelize.sync()
 
+// sequelize.sync({ force: true })
+
 module.exports = {
     User,
     Answer,
