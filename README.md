@@ -24,37 +24,10 @@ or
 
 ## Endpoints
 
-### Регистрация
-
-#### `POST /register`
-
-Request
-```json
-{
-	"fio": "Peshkov Nikita",
-	"email": "peshkov.nikita@mail.com",
-	"password": "chabypeli10"
-}
-```
-
-Resonse (если все ок)
-```json
-{
-  "token": "4c4dd504-2622-5ee9-bd53-fb905047e934",
-  "status": 200
-}
-```
-Response (если такой email уже существует)
-```json
-{
-  "token": "",
-  "status": 400
-}
-```
-
-### Авторизация
+### Авторизация/регистрация
 
 #### `POST /auth`
+Авторизация
 
 Request
 ```json
@@ -82,9 +55,37 @@ Resonse в случае неуспешной авторизации
 }
 ```
 
-### Создание теста
+#### `POST /register`
+Регистрация
 
-#### `POST /test`
+Request
+```json
+{
+	"fio": "Peshkov Nikita",
+	"email": "peshkov.nikita@mail.com",
+	"password": "chabypeli10"
+}
+```
+
+Resonse (если все ок)
+```json
+{
+  "token": "4c4dd504-2622-5ee9-bd53-fb905047e934",
+  "status": 200
+}
+```
+Response (если такой email уже существует)
+```json
+{
+  "token": "",
+  "status": 400
+}
+```
+
+### Тесты глазами преподавателя
+
+#### `POST /tests`
+Создание теста
 
 Request
 ```json
