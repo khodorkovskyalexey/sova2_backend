@@ -14,7 +14,7 @@ router
       title: ctx.request.body.title,
       subject: ctx.request.body.subject,
     });
-    await test.setUser(ctx.request.body.author)
+    await test.setAuthor(ctx.request.body.author)
 
     const questions_list = ctx.request.body.questions;
     for (const i in questions_list) {
