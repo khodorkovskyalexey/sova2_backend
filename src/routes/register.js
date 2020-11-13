@@ -1,12 +1,11 @@
 const router = require('koa-router')()
 const { v5: uuidv5 } = require('uuid')
 const { User } = require('../database/db')
-
-require('dotenv').config({ path: '../.env' })
+const { TOKEN_NAMESPACE } = require('../configs/env')
 
 router
     .post('/register', async ctx => {
-        const token = uuidv5(ctx.request.body["email"], process.env.TOKEN_NAMESPACE)
+        const token = uuidv5(ctx.request.body["email"], TOKEN_NAMESPACE)
         let success = true
         await User
             .findOrCreate({ where: { email: ctx.request.body["email"] } })

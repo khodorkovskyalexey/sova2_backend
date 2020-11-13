@@ -35,7 +35,7 @@ Request
 Resonse (если все ок)
 ```json
 {
-  "token": "23uige-jwr-flakj-dshja-ksfh",
+  "token": "4c4dd504-2622-5ee9-bd53-fb905047e934",
   "status": 200
 }
 ```
@@ -62,7 +62,8 @@ Request
 Resonse в случае успешной авторизации
 ```json
 {
-	"token": "23uige-jwr-flakj-dshja-ksfh",
+	"fio": "Peshkov Nikita",
+	"token": "4c4dd504-2622-5ee9-bd53-fb905047e934",
 	"status": 200
 }
 ```
@@ -70,7 +71,49 @@ Resonse в случае успешной авторизации
 Resonse в случае неуспешной авторизации
 ```json
 {
+	"fio": "",
 	"token": "",
 	"status": 400
+}
+```
+
+### Создание теста
+
+#### `POST /test`
+
+Request
+```json
+{
+  "title": "Какой-то заголовок",
+  "subject": "Проектная деятельность",
+  "author": "4c4dd504-2622-5ee9-bd53-fb905047e934",
+  "questions": [
+    {
+      "text": "Вопрос 1",
+      "answers": [
+        {
+          "text": "Ответ 1 верный",
+          "is_it_true": true
+        },
+        {
+          "text": "Ответ 2 неверный",
+          "is_it_true": false
+        }
+      ]
+    },
+    {
+      "text": "Вопрос 2",
+      "answers": [
+        {
+          "text": "Вопрос 1 неверный",
+          "is_it_true": false
+        },
+        {
+          "text": "Вопрос 2 верный",
+          "is_it_true": true
+        }
+      ]
+    }
+  ]
 }
 ```
