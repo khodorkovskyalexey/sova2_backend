@@ -2,7 +2,15 @@ const Koa = require('koa')
 const logger = require('koa-morgan')
 const cors = require('koa-cors')
 const bodyParser = require("koa-body")()
+const router = require('koa-router')()
+
+const path = require('path')
+const fs = require('fs')
+
+// Middleware
 const errorMiddleware = require('./middlewares/error')
+const serve = require('koa-static');
+
 const server = new Koa()
 
 //routes
@@ -14,6 +22,8 @@ const port = process.env.PORT || 8081
 server
     .use(errorMiddleware)
     //cors
+
+    .use(cors())
     .use(async (ctx, next) => {
         ctx.set("Access-Control-Allow-Origin", "*")
         ctx.set(
@@ -23,13 +33,6 @@ server
         ctx.set("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS")
         await next()
     })
-    .use(cors({
-        "origin": "*",
-        "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-        "preflightContinue": false,
-        "optionsSuccessStatus": 204,
-        "credentials": true
-    }))
     //bodyparser
     .use(bodyParser)
     //routes
@@ -45,4 +48,12 @@ server
 if(process.env.NODE_ENV !== "production") {
     const get_all_router = require('./routes/get_all')
     server.use(get_all_router.routes())
+}
+else{
+    // production mode
+    server.use(serve(__dirname + '../public'))
+    router.get('/', ctx => {
+        ctx.body = fs.readFileSync(path.resolve(path.join('public', 'index.html')), 'utf8')
+    })
+    server.use(router.routes())
 }
