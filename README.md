@@ -17,6 +17,11 @@ Then you need to execute the command for starting server:
 or
 `yarn dev`
 
+For lint anf format code use to:
+`yarn lint`
+or
+`npm run dev`
+
 ## Endpoints
 
 ### Регистрация
