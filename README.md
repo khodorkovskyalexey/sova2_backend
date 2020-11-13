@@ -118,3 +118,38 @@ Request
   ]
 }
 ```
+
+#### `GET /:token/tests`
+Получение всех тестов конкретного преподавателя (для главной страницы)
+
+Response
+```json
+[
+  {
+    "subject": "Компьютерные сети",
+    "tests": [
+      {
+        "title": "Контрольная работа 1",
+        "test_id": "fads-r32fsa-32-fdsaf-ssa"
+      },
+      {
+        "title": "Контрольная работа 2",
+        "test_id": "432fff21-432a-32-f321f-2"
+      }
+    ]
+  },
+  {
+    "subject": "Английский язык",
+    "tests": [
+      {
+        "title": "-ing",
+        "test_id": "fads-r32fsa-32fdas-sa"
+      },
+      {
+        "title": "-ed",
+        "test_id": "432111fds1--ffd321f-2"
+      }
+    ]
+  }
+]
+```
