@@ -6,7 +6,7 @@ const { Test, Question, Answer } = require('../database/db')
 const find_user = require('../middlewares/find_tests_author_by_token')
 
 router
-    .post('/test', find_user, async ctx => {
+    .post('/tests', find_user, async ctx => {
         const test_id = uuidv4() //"c164e4f8-8ec3-4422-8302-21d3e708941a"
         const test = await Test.create({
             test_id,
