@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nodemon src/index.js",
     "start": "cross-env NODE_ENV=production node src/index.js",
-    "lint" : "eslint --fix-dry-run -f  src/routes/** src/index.js "
+    "lint": "eslint --fix-dry-run -f  src/routes/** src/index.js "
   },
   "dependencies": {
     "cross-env": "^7.0.2",

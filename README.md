@@ -20,7 +20,7 @@ or
 For lint anf format code use to:
 `yarn lint`
 or
-`npm run dev`
+`npm run lint`
 
 ## Endpoints
 
