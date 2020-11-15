@@ -2,10 +2,9 @@ const router = require('koa-router')()
 
 //middlewares
 const find_user = require('../middlewares/find_tests_author_by_token')
-const set_body = require('../middlewares/set_author_in_req_body')
 
 router
-    .get('/:token/tests', set_body, find_user, async ctx => {
+    .get('/:token/tests', find_user, async ctx => {
         const tests = await ctx.request.body["author"].getTests({ attributes: ["title", "test_id", "subject"] })
         var res = []
         var subject = []

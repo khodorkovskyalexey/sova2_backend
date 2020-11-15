@@ -7,7 +7,7 @@ const find_user = require('../middlewares/find_tests_author_by_token');
 
 router
 
-  .post('/tests', find_user, async (ctx) => {
+  .post('/:token/tests', find_user, async (ctx) => {
     const test_id = uuidv4();
     const test = await Test.create({
       test_id,

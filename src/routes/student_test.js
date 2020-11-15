@@ -7,7 +7,7 @@ router
         const res = await Test.findOne({ where: { test_id: ctx.params["test_id"] },
             attributes: ["title", "subject"],
             include: [
-                { model: User, as: "author", attributes: ["fio"] },
+                { model: User, attributes: ["fio"] },
                 { model: Question, attributes: ["id", "text"],
                     include: { model: Answer, attributes: ["id", "text"] }
                 }]
