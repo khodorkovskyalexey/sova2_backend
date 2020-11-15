@@ -18,6 +18,7 @@ const auth_router = require('./routes/auth');
 const new_test_router = require('./routes/new_test');
 const teacher_tests_router = require('./routes/teacher_tests')
 const student_test_router = require('./routes/student_test')
+const test_result_router = require('./routes/get_test_result')
 
 const port = process.env.PORT || 8081;
 server
@@ -41,6 +42,7 @@ server
     .use(new_test_router.routes())
     .use(teacher_tests_router.routes())
     .use(student_test_router.routes())
+    .use(test_result_router.routes())
     // others
     .use(logger('dev'))
     .listen(port, () => {
