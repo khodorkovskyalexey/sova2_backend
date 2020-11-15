@@ -1,7 +1,5 @@
 const router = require('koa-router')();
-const {
-  User, Test, Question, Answer,
-} = require('../database/db');
+const { User, Test, Question, Answer, Result } = require('../database/db');
 
 router
   .get('/users', async (ctx) => {
@@ -15,6 +13,9 @@ router
   })
   .get('/answers', async (ctx) => {
     ctx.body = await Answer.findAll();
-  });
+  })
+  .get('/results', async ctx => {
+    ctx.body = await Result.findAll()
+  })
 
 module.exports = router;
