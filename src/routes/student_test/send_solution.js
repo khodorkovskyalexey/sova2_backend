@@ -1,5 +1,5 @@
 const router = require('koa-router')()
-const { Answer } = require('../database/db')
+const { Answer } = require('../../database/db')
 
 function question_is_true(true_answer, student_answer) {
     if(true_answer["answers"].length !== student_answer.length) {
@@ -15,12 +15,12 @@ function question_is_true(true_answer, student_answer) {
 }
 
 //middlewares
-const find_test = require('../middlewares/find_test')
-const check_student_data = require('../middlewares/check_students_data_in_request')
+const find_test = require('../../middlewares/find_test_without_auth')
+const check_student_data = require('../../middlewares/check_student_data')
 
 router
     .post('/tests/:test_id', check_student_data, find_test, async ctx => {
-        const true_questions_answer = await ctx.request.body["test"].getQuestions({
+        const true_questions_answer = await ctx.data["test"].getQuestions({
             attributes: ["id"], include: { model: Answer, where: { isTrue: true },
                 attributes: ["id"] } })
         const student_answers = ctx.request.body["questions"]
@@ -31,11 +31,11 @@ router
                 mark += question_is_true(true_questions_answer[i].dataValues, question.answers)
             }
         }
-        const { MAX_MARK } = require('../configs/mark_configs')
+        const { MAX_MARK } = require('../../configs/mark_configs')
         mark *= MAX_MARK / true_questions_answer.length
         mark = ~~mark
 
-        await ctx.request.body["test"].createResult({
+        await ctx.data["test"].createResult({
             fio: ctx.request.body["student"].fio,
             group: ctx.request.body["student"].group,
             mark

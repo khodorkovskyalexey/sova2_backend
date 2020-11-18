@@ -1,5 +1,5 @@
 const router = require('koa-router')();
-const { User } = require('../database/db');
+const { User } = require('../../database/db');
 
 router
   .post('/auth', async (ctx) => {
