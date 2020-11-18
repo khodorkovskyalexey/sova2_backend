@@ -1,6 +1,6 @@
 //параметры запроса взял отсюда https://sequelize.org/master/manual/eager-loading.html
 const router = require('koa-router')();
-const { User, Test, Question, Answer } = require('../database/db');
+const { User, Test, Question, Answer } = require('../../database/db');
 
 router
     .get('/tests/:test_id', async ctx=> {
