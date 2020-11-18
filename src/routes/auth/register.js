@@ -18,7 +18,7 @@ router
                     User.update(updateData, { where: { id: user.id } })
                     ctx.body = { token, status: 200 }
                 } else {
-                    ctx.body = { token: '', status: 400 }
+                    throw new Error('This email is busy')
                 }
             })
     })
