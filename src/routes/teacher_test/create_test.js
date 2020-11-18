@@ -7,13 +7,15 @@ const find_author = require('../../middlewares/find_author');
 
 router
     .post('/:token/tests', find_author, async (ctx) => {
+        console.log(1)
         const test_id = uuidv4()
         const test = await Test.create({
             test_id,
             title: ctx.request.body.title,
             subject: ctx.request.body.subject,
         })
-        await test.setAuthor(ctx.data["author"])
+        console.log(test)
+        await test.setAuthor(ctx.request.body["author"])
 
         const questions_list = ctx.request.body.questions
         for (const i in questions_list) {

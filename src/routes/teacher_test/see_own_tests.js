@@ -5,7 +5,7 @@ const find_user = require('../../middlewares/find_author')
 
 router
     .get('/:token/tests', find_user, async ctx => {
-        const tests = await ctx.data["author"].getTests({
+        const tests = await ctx.request.body["author"].getTests({
             attributes: ["title", "test_id", "subject"] })
         var res = []
         var subject = []

@@ -20,7 +20,7 @@ const check_student_data = require('../../middlewares/check_student_data')
 
 router
     .post('/tests/:test_id', check_student_data, find_test, async ctx => {
-        const true_questions_answer = await ctx.data["test"].getQuestions({
+        const true_questions_answer = await ctx.request.body["test"].getQuestions({
             attributes: ["id"], include: { model: Answer, where: { isTrue: true },
                 attributes: ["id"] } })
         const student_answers = ctx.request.body["questions"]
@@ -35,7 +35,7 @@ router
         mark *= MAX_MARK / true_questions_answer.length
         mark = ~~mark
 
-        await ctx.data["test"].createResult({
+        await ctx.request.body["test"].createResult({
             fio: ctx.request.body["student"].fio,
             group: ctx.request.body["student"].group,
             mark

@@ -13,10 +13,10 @@ const errorMiddleware = require('./middlewares/error');
 const server = new Koa();
 
 // routes
-const register_router = require('./routes/auth/register');
-const auth_router = require('./routes/auth/auth');
+const register_router = require('./routes/auth/register')
+const auth_router = require('./routes/auth/auth')
 
-const teacher_create_test_router = require('./routes/teacher_test/create_test');
+const teacher_create_test_router = require('./routes/teacher_test/create_test')
 const teacher_see_own_tests_router = require('./routes/teacher_test/see_own_tests')
 const teacher_see_result_router = require('./routes/teacher_result/see_results')
 
