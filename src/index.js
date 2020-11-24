@@ -20,6 +20,7 @@ const teacher_create_test_router = require('./routes/teacher_test/create_test')
 const teacher_see_own_tests_router = require('./routes/teacher_test/see_own_tests')
 
 const teacher_see_result_router = require('./routes/teacher_more_actions/see_results')
+const teacher_delete_own_test_router = require('./routes/teacher_more_actions/delete_own_test')
 
 const student_take_test_router = require('./routes/student_test/take_test')
 const student_send_solution_router = require('./routes/student_test/send_solution')
@@ -50,6 +51,7 @@ server
     .use(teacher_create_test_router.routes())
     .use(teacher_see_own_tests_router.routes())
     .use(teacher_see_result_router.routes())
+    .use(teacher_delete_own_test_router.routes())
     // routes for student
     .use(student_take_test_router.routes())
     .use(student_send_solution_router.routes())
