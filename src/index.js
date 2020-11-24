@@ -53,6 +53,8 @@ server
     .use(student_take_test_router.routes())
     .use(student_send_solution_router.routes())
 
+    .use(logger('dev'))
+
     .listen(port, () => {
         console.log(`Server listening on port: ${port}`);
     });

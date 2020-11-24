@@ -8,8 +8,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nodemon src/index.js",
-    "start": "node src/index.js",
-    "lint": "eslint --fix-dry-run -f  src/routes/** src/index.js "
+    "start": "cross-env NODE_ENV=production node src/index.js",
+    "lint": "eslint --fix-dry-run -f  src/routes/** src/index.js"
   },
   "dependencies": {
     "cross-env": "^7.0.2",
@@ -29,4 +29,5 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1"
   }
+
 }

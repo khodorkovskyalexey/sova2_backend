@@ -10,4 +10,4 @@ RUN yarn install
 COPY . .
 
 EXPOSE 8081
-CMD ["node", './src/index.js']
+CMD [ "node", "./src/index.js" ]
