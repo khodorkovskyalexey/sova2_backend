@@ -18,7 +18,8 @@ const auth_router = require('./routes/auth/auth')
 
 const teacher_create_test_router = require('./routes/teacher_test/create_test')
 const teacher_see_own_tests_router = require('./routes/teacher_test/see_own_tests')
-const teacher_see_result_router = require('./routes/teacher_result/see_results')
+
+const teacher_see_result_router = require('./routes/teacher_more_actions/see_results')
 
 const student_take_test_router = require('./routes/student_test/take_test')
 const student_send_solution_router = require('./routes/student_test/send_solution')
