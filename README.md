@@ -123,7 +123,7 @@ Request
 }
 ```
 
-### `DELETE /:token/tests/:test_id`
+#### `DELETE /:token/tests/:test_id`
 Удаление теста
 
 #### `GET /:token/tests`
