@@ -17,9 +17,15 @@ Test.belongsTo(User)
 Test.hasMany(Result)
 Result.belongsTo(Test)
 
-sequelize.sync()
-
-// sequelize.sync({ force: true })
+sequelize
+    // .sync({ force: true })
+    .sync()
+    .then(() => {
+        console.log("Tables has been synced")
+    })
+    .catch(err => {
+        throw err
+    })
 
 module.exports = {
     User,
